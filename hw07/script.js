@@ -12,20 +12,21 @@ week[6] = "Saturday";
 //const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 const date = new Date();
-const today = week[date.getDay()];
+let today = week[date.getDay()];
+//let today = week[1];
 const div = document.querySelector(".weekdays");
 let lastP;
 
-for ( let i = 0; i<week.length; i++) {
+for ( let i = 0; i < week.length; i++) {
   div.insertAdjacentHTML("beforeend",`<p></p>`);
   lastP = div.lastElementChild;
   lastP.insertAdjacentText("beforeend", week[i]);
-  if (week[i] === today) {
-    lastP.style.fontWeight = "bold";
+  if ((i === 0 && week[i] === today) ||( i === 6 && week[i] === today)) {
     lastP.style.fontStyle = "italic";
-  } else if (i === 0 || i === 6) {
     lastP.style.fontWeight = "bold";
-  } else {
-    lastP.style.fontStyle = "italic";
-  } 
+   } else if ((i === 0 && week[i] !== today) ||( i === 6 && week[i] !== today)) {
+     lastP.style.fontStyle = "italic";
+   } else if ((i !== 0 && week[i] === today) ||( i !== 6 && week[i] === today)) {
+     lastP.style.fontWeight = "bold";
+   }
 }
