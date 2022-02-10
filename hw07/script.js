@@ -21,12 +21,12 @@ for ( let i = 0; i < week.length; i++) {
   div.insertAdjacentHTML("beforeend",`<p></p>`);
   lastP = div.lastElementChild;
   lastP.insertAdjacentText("beforeend", week[i]);
-  if ((i === 0 && week[i] === today) ||( i === 6 && week[i] === today)) {
+  if ((i === 0 && week[i] === today) || ( i === 6 && week[i] === today)) {
     lastP.style.fontStyle = "italic";
     lastP.style.fontWeight = "bold";
-   } else if ((i === 0 && week[i] !== today) ||( i === 6 && week[i] !== today)) {
+   } else if ((i === 0 && week[i] !== today) || ( i === 6 && week[i] !== today)) {
      lastP.style.fontStyle = "italic";
-   } else if ((i !== 0 && week[i] === today) ||( i !== 6 && week[i] === today)) {
+   } else if ((i !== 0 && week[i] === today) || ( i !== 6 && week[i] === today)) {
      lastP.style.fontWeight = "bold";
    }
 }
